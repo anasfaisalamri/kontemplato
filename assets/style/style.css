@@ -49,12 +49,12 @@ nav.navbar .offcanvas {
 }
 
 .hero {
-  background: url('../img/kamisanHero.jpg');
+  background: url(../img/kamisan-hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
-  position: relative;
+  /* position: relative; */
 }
 
 .hero .hero-caption {
