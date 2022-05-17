@@ -54,7 +54,6 @@ nav.navbar .offcanvas {
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
-  /* position: relative; */
 }
 
 .hero .hero-caption {
@@ -64,6 +63,17 @@ nav.navbar .offcanvas {
   transform: translate(-50%, -50%);
 }
 
-.hero-caption h1 {
+.hero-caption mark {
   line-height: 1.3em;
+}
+
+.hero-caption h5 mark {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  .hero-caption mark {
+    font-size: .85em;
+  }
 }
