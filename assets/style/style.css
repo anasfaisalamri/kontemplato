@@ -49,7 +49,7 @@ nav.navbar .offcanvas {
 }
 
 .hero {
-  background: url('/assets/img/kamisanHero.jpg');
+  background: url('../img/kamisanHero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
