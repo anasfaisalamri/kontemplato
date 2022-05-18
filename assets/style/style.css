@@ -48,7 +48,7 @@ nav.navbar .offcanvas {
   background-color: var(--gold);
 }
 
-.hero {
+section.hero {
   background: url(../img/kamisan-hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,24 +56,31 @@ nav.navbar .offcanvas {
   min-height: 100vh;
 }
 
-.hero .hero-caption {
+section.hero .hero-caption {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  max-width: 800px;
 }
 
-.hero-caption mark {
+section.hero .hero-caption h1 {
+  font-size: 3em;
   line-height: 1.3em;
 }
 
-.hero-caption h5 mark {
+section.hero .hero-caption h5 mark {
   background-color: black;
   color: white;
 }
 
 @media (max-width: 450px) {
-  .hero-caption mark {
-    font-size: .85em;
+  section.hero .hero-caption h1 {
+    font-size: 2.5em;
+  }
+
+  section.hero .hero-caption h5 {
+    font-size: 1.1em;
   }
 }
