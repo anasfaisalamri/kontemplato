@@ -9,7 +9,7 @@ $(document).ready(function(){
 $('#news').find('.owl-carousel').owlCarousel({
   loop:true,
   autoplay:true,
-  autoplayTimeout:2000,
+  autoplayTimeout:3000,
   margin:10,
   nav:false,
   dotsClass:false,
@@ -33,7 +33,6 @@ $('#news').find('.owl-carousel').owlCarousel({
 $('#majalah').find(".owl-carousel").owlCarousel({
   loop:true,
   autoplay:true,
-  autoplayTimeout:3000,
   items:1,
   nav:false,
   dotsClass:false,
