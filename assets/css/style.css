@@ -1,0 +1,1431 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Chonburi&family=Fira+Sans:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap");
+
+:root {
+	--primary: #0d6efd;
+	--second: #40a3e6;
+	--highlight: #404ce6;
+	--shading: #2b579a;
+	--magenta: #ee5793;
+	--pink: #f66d9b;
+	--orange: #ffa54c;
+	--yellow: #ffed4a;
+	--green: #1eea73;
+	--gray: #6c757d;
+	--gray-dark: #343a40;
+	--dark: #0f0f0f;
+	--gold: #ffce00;
+	--breakpoint-xs: 0;
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1200px;
+	--font-family-primary: "Poppins", sans-serif;
+	--font-family-secondary: "Akshar", sans-serif;
+	--font-family-serif: "Chonburi", cursive;
+	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+	--animate-duration: 700ms;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-family-primary);
+	color: var(--dark);
+	box-sizing: border-box;
+	background-color: var(--white);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--shading);
+}
+
+.font-bold {
+	font-weight: 800;
+}
+
+.font-secondary {
+	font-family: var(--font-family-secondary);
+}
+
+.font-serif {
+	font-family: var(--font-family-serif);
+}
+
+.bg-main {
+	background-color: var(--primary) !important;
+}
+
+.bg-dark {
+	background-color: var(--dark) !important;
+}
+
+.text-main {
+	color: var(--primary) !important;
+	color: var(--primary);
+}
+
+.text-dark {
+	color: var(--dark);
+}
+
+.scroll-to-top {
+	cursor: pointer;
+}
+
+a.up {
+	text-decoration: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	display: none;
+	width: 2.75rem;
+	height: 2.75rem;
+	text-align: center;
+	color: #fff;
+	background: rgba(90, 92, 105, 0.5);
+	line-height: 46px;
+	transition: 0.5s;
+	z-index: 999;
+}
+
+#wrapper #content-wrapper {
+	display: flex;
+	height: 100%;
+	min-height: 100vh;
+	align-items: center;
+}
+
+.back {
+	display: inline-block;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	margin-left: 1rem;
+	font-size: 2.5rem;
+	color: #fff;
+}
+
+#kontemplato-all .item .date {
+	font-size: 14px;
+}
+
+#kontemplato-all .item .penulis {
+	font-size: 18px;
+}
+
+#kontemplato-all .item .judul {
+	transition: 0.3s ease;
+}
+
+#kontemplato-all .item .judul:hover {
+	color: var(--primary);
+}
+
+#registrasi {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #eee;
+}
+
+#registrasi .form-reg {
+	width: 600px;
+	padding: 40px 60px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+#login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #eee;
+}
+
+#login .form-reg {
+	width: 500px;
+	padding: 60px 60px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+#registrasi .error {
+	margin: 0px auto;
+	padding: 10px;
+	border: 1px solid #a94442;
+	color: #a94442;
+	background: #f2dede;
+	border-radius: 5px;
+	text-align: left;
+}
+
+#login .error {
+	margin: 0px auto;
+	padding: 10px;
+	border: 1px solid #a94442;
+	color: #a94442;
+	background: #f2dede;
+	border-radius: 5px;
+	text-align: left;
+}
+
+#not-found {
+	background-color: var(--warning);
+	height: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* navbar start */
+#navbar-index {
+	transition: 0.3s;
+	background-color: #fff;
+}
+
+#navbar-index .navbar-brand {
+	font-size: 2rem;
+	font-weight: 800;
+	color: var(--primary);
+	cursor: pointer;
+}
+
+.navbar .navbar-brand {
+	font-size: 2rem;
+	font-weight: 800;
+	color: #fff;
+}
+
+#navbar-index .navbar-nav {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.navbar-bg-white {
+	background-color: #fff;
+	color: var(--primary) !important;
+	opacity: 1;
+	transition: opacity 0.4s;
+	z-index: 999;
+}
+
+.navbar-none {
+	transition: opacity 0.5s;
+	opacity: 0;
+	z-index: -999;
+}
+
+.navbar-nav .nav-link.active {
+	color: var(--primary) !important;
+}
+/* navbar end */
+
+/* hero start */
+#hero .logo {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	margin: 20px auto 0;
+	z-index: 1;
+	color: #fff;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+#hero {
+	position: relative;
+	overflow: hidden;
+	background-image: url(../img/icon/logo.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100vh;
+}
+
+#hero .masih-kosong {
+	height: 100vh;
+	line-height: 100vh;
+	text-align: center;
+}
+
+#hero .masih-kosong h1 {
+	background-color: #fff;
+	padding: 5px 7px;
+	border-radius: 4px;
+	text-transform: capitalize;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#hero .img-cover {
+	object-position: center;
+	object-fit: cover;
+	min-height: 100vh;
+	height: 100%;
+	min-width: 100vw;
+	width: 100%;
+}
+
+#hero .transparent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.75);
+	background-position: center;
+	background-size: cover;
+}
+
+#hero .hero-caption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -55%);
+	width: 100%;
+	max-width: 1250px;
+	z-index: 1;
+	color: #fff;
+}
+
+#hero .hero-caption img.img-fluid {
+	border-radius: 0.5rem;
+}
+
+#hero .hero-caption .badge {
+	display: inline-block;
+	font-family: var(--font-family-secondary);
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	background-color: var(--dark);
+	border-radius: 0.3rem;
+	padding: 0.5rem 1rem;
+}
+
+#hero .hero-caption .judul {
+	margin-top: 1rem;
+	font-size: 2.6rem;
+	line-height: 1.3;
+	text-transform: capitalize;
+}
+
+#hero .hero-caption .judul a {
+	text-decoration: none;
+	color: #fff;
+	transition: 0.3s ease;
+	font-family: var(--font-family-serif);
+}
+
+#hero .hero-caption .judul a:hover {
+	color: var(--primary);
+}
+
+#hero .hero-caption .penulis {
+	margin: 2.3rem 0;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+#hero .hero-caption .tagline {
+	margin: 2.2rem 0;
+	font-size: 1.2rem;
+	text-transform: capitalize;
+}
+
+#hero .hero-caption .date {
+	font-size: 1rem;
+	font-weight: 600;
+}
+/* hero end */
+
+/* essay start */
+#ornamen {
+	background-color: #eaeaea;
+	padding: 2.5rem 0;
+	position: relative;
+}
+
+#ornamen .essay-highlight {
+	margin-top: 1rem;
+	position: relative;
+}
+
+#ornamen .essay-highlight .item {
+	background-color: #fff;
+	height: 100%;
+	min-height: 720px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+#ornamen .essay-highlight .item .redaksi {
+	padding: 1.5rem;
+}
+
+#ornamen .essay-highlight .judul {
+	font-size: 1.8rem;
+	font-family: var(--font-family-serif);
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+#ornamen .essay-highlight .penulis {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	margin: 1rem 0;
+}
+
+#ornamen .essay-highlight .tagline {
+	font-size: 1rem;
+}
+
+#ornamen .essay-highlight .date {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+#ornamen .owl-carousel .item {
+	position: relative;
+	background-color: #fff;
+	height: 100%;
+	min-height: 720px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	margin-top: 1rem;
+}
+
+#ornamen .highlight {
+	padding-top: 5.5rem;
+}
+
+#ornamen .highlight .badge {
+	display: inline-block;
+	background-color: var(--dark);
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: var(--font-family-secondary);
+	font-size: 1rem;
+	border-radius: 0.3rem !important;
+}
+
+#ornamen .highlight .date {
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 1rem 0 2.2rem;
+}
+
+#ornamen .highlight .judul {
+	padding: 0 1.5rem;
+	margin-top: 1.5rem;
+	font-size: 1.5rem;
+}
+
+#ornamen .highlight .judul a {
+	text-decoration: none;
+	color: #000;
+	transition: 0.3s ease;
+	font-family: var(--font-family-serif);
+}
+
+#ornamen .highlight .judul a:hover {
+	color: var(--primary) !important;
+}
+
+#ornamen .highlight .penulis {
+	margin-top: 1rem;
+	padding: 0 24px;
+	font-size: 1rem;
+}
+
+#ornamen .overlay {
+	padding: 2.5rem 1.5rem;
+}
+
+#ornamen .overlay .overlay-item {
+	padding-top: 3rem;
+}
+
+#ornamen .overlay .overlay-item .badge {
+	display: inline-block;
+	background-color: var(--dark);
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: var(--font-family-secondary);
+	font-size: 1.1rem;
+	border-radius: 0.3rem;
+}
+
+#ornamen .overlay .overlay-item .date {
+	font-size: 1.1rem;
+	margin-top: 1rem;
+	font-weight: 600;
+}
+
+#ornamen .overlay .overlay-item .tagline {
+	font-weight: 100;
+	font-size: 1.1rem;
+	margin-top: 3rem;
+}
+
+#ornamen .overlay {
+	position: absolute;
+	width: auto;
+	height: 100%;
+	min-height: 800px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	transition: 0.5s ease;
+	background-color: var(--primary);
+}
+
+#ornamen .item:hover .overlay {
+	opacity: 1;
+}
+
+#ornamen .owl-stage .owl-item:nth-child(1) .overlay {
+	background-color: var(--green);
+}
+
+#ornamen .owl-stage .owl-item:nth-child(2) .overlay {
+	background-color: var(--magenta);
+}
+
+#ornamen .owl-stage .owl-item:nth-child(3) .overlay {
+	background-color: var(--orange);
+}
+
+#ornamen .owl-stage .owl-item:nth-child(4) .overlay {
+	background-color: var(--primary);
+}
+
+#ornamen .owl-dot {
+	margin-top: 1rem;
+}
+
+#ornamen .owl-dot.active span {
+	background: var(--primary) !important;
+}
+
+#ornamen .owl-nav {
+	margin-top: 0;
+}
+
+#ornamen .owl-carousel .owl-nav .owl-prev {
+	position: absolute;
+	top: 45%;
+	left: 0;
+	font-size: 30px;
+	width: 35px;
+	color: #fff;
+	background-color: var(--dark);
+	border-radius: 5px;
+}
+
+#ornamen .owl-carousel .owl-nav .owl-next {
+	position: absolute;
+	top: 45%;
+	right: 0;
+	font-size: 30px;
+	width: 35px;
+	color: #fff;
+	background-color: var(--dark);
+	border-radius: 5px;
+}
+/* essay end */
+
+/* preview majalah start */
+#preview-majalah {
+	color: #fff;
+	background-color: var(--primary);
+	padding: 3rem 0;
+}
+
+#preview-majalah .series {
+	background-color: var(--dark);
+	padding: 0.3rem 0;
+	border-radius: 0.4rem;
+	font-family: var(--font-family-secondary);
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#preview-majalah .series a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#preview-majalah .ilustrator {
+	font-size: 0.9rem;
+	padding: 0 0.5rem;
+}
+
+#preview-majalah .desc .tagline {
+	font-size: 1.3rem;
+}
+
+#preview-majalah .desc .substr a {
+	color: white;
+	text-decoration: none;
+}
+
+#preview-majalah .desc .substr * {
+	font-size: 1.1rem !important;
+	line-height: 1.5 !important;
+	font-family: var(--font-family-primary) !important;
+}
+
+#preview-majalah img.img-fluid {
+	border-radius: 0.5rem;
+	margin: 1rem 0 0.5rem;
+}
+
+#preview-majalah .desc {
+	padding: 1rem 3rem 0;
+}
+
+#preview-majalah .tagline {
+	margin-bottom: 1rem;
+}
+
+#preview-majalah .penulis {
+	margin-top: 1.5rem;
+}
+
+#preview-majalah .btn {
+	margin-top: 3rem;
+	margin-bottom: 0.5rem;
+}
+/* preview-majalah end */
+
+#kontemplato {
+	background-color: #eaeaea;
+	padding: 3rem 0;
+}
+
+#kontemplato .owl-carousel .item {
+	position: relative;
+	background-color: #fff;
+	height: 100%;
+	min-height: 720px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	padding: 3.5rem 0 0;
+}
+
+#kontemplato .highlight .badge {
+	display: inline-block;
+	background-color: var(--dark);
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: var(--font-family-secondary);
+	font-size: 1.1rem;
+	border-radius: 0.3rem !important;
+}
+
+#kontemplato .highlight .date {
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0 1.5rem;
+	margin: 0.5rem 0 2rem;
+}
+
+#kontemplato .highlight .judul {
+	padding: 0 1.5rem;
+	margin-top: 1.5rem;
+	font-size: 1.6rem;
+}
+
+#kontemplato .highlight .judul a {
+	text-decoration: none;
+	color: #000;
+	transition: 0.3s ease;
+	font-family: var(--font-family-serif);
+}
+
+#kontemplato .highlight .judul a:hover {
+	color: var(--primary) !important;
+}
+
+#kontemplato .highlight .penulis {
+	margin-top: 16px;
+	padding: 0 24px;
+	font-size: 1.1rem;
+}
+
+#kontemplato .highlight .tagline {
+	margin-top: 16px;
+	padding: 0 24px;
+	font-size: 1rem;
+}
+
+#kontemplato .highlight .btn {
+	margin: 1rem 1.5rem 0;
+	font-size: 1rem;
+}
+
+#kontemplato .owl-dot {
+	margin-top: 1rem;
+}
+
+#kontemplato .owl-dot.active span {
+	background: var(--primary) !important;
+}
+
+#kontemplato .owl-nav {
+	margin-top: 0;
+}
+
+#kontemplato .owl-carousel .owl-nav .owl-prev {
+	position: absolute;
+	top: 45%;
+	left: 0;
+	font-size: 30px;
+	width: 35px;
+	color: #fff;
+	background-color: var(--dark);
+	border-radius: 5px;
+}
+
+#kontemplato .owl-carousel .owl-nav .owl-next {
+	position: absolute;
+	top: 45%;
+	right: 0;
+	font-size: 30px;
+	width: 35px;
+	color: #fff;
+	background-color: var(--dark);
+	border-radius: 5px;
+}
+
+/* baca start */
+#baca {
+	overflow: hidden;
+}
+
+#baca .badge {
+	font-size: 1.3rem;
+	margin-top: 50px;
+	border-radius: 0.3rem;
+	font-family: var(--font-family-secondary);
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: var(--dark);
+}
+
+#baca .date {
+	margin: 1rem 0 1.2rem;
+	font-size: 1.2rem;
+}
+
+#baca .judul {
+	font-family: var(--font-family-serif);
+	font-size: 3rem;
+	text-align: center;
+	font-weight: 700;
+}
+
+#baca .penulis {
+	font-size: 1.5rem;
+	margin: 1rem 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#baca .tagline {
+	margin: 1.2rem 0 2rem;
+	font-size: 1.3rem;
+}
+
+#baca .konten-tulisan {
+	font-size: 18px;
+	line-height: 26px;
+	margin: 1rem 0 5rem;
+}
+
+#baca .konten-tulisan * {
+	font-size: 1.15rem !important;
+	font-family: var(--font-family-primary) !important;
+	line-height: 1.5 !important;
+}
+
+#baca img.artwork {
+	width: 100%;
+	min-width: 100vw;
+	object-fit: cover;
+	object-position: center;
+}
+
+#comics .comic {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+#comics .comic img {
+	width: calc(100% / 4);
+}
+
+.ilustrator {
+	font-size: 14px;
+}
+
+@media screen and (max-width: 1399px) {
+	#navbar-index .navbar-brand {
+		font-size: 1.8rem;
+	}
+
+	.navbar .navbar-brand {
+		font-size: 1.8rem;
+	}
+
+	#hero .logo {
+		font-size: 1.8rem;
+	}
+
+	/* hero start */
+	#hero .hero-caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 1100px;
+		z-index: 1;
+	}
+
+	#hero .hero-caption .badge {
+		font-size: 1.2rem;
+	}
+
+	#hero .hero-caption .judul {
+		font-size: 2.4rem;
+	}
+
+	#hero .hero-caption .penulis {
+		font-size: 1.5rem;
+	}
+
+	#hero .hero-caption .tagline {
+		font-size: 1rem;
+	}
+
+	#hero .hero-caption .date {
+		font-size: 0.9rem;
+	}
+	/* hero end */
+
+	/* essay start */
+	#ornamen .essay-highlight .judul {
+		font-size: 1.5rem;
+	}
+
+	#ornamen .essay-highlight .penulis {
+		font-size: 1.1rem;
+	}
+
+	#ornamen .essay-highlight .tagline {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .essay-highlight .date {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .essay-highlight .item {
+		min-height: 650px;
+	}
+
+	#ornamen .owl-carousel .item {
+		min-height: 650px;
+	}
+
+	#ornamen .item .highlight .date {
+		margin-bottom: 1.8rem;
+	}
+
+	#ornamen .item .highlight .judul {
+		font-size: 1.3rem;
+	}
+
+	#ornamen .item .highlight .penulis {
+		font-size: 1rem;
+	}
+
+	#ornamen .item .overlay .tagline {
+		font-size: 1rem;
+		margin-top: 2.7rem;
+	}
+	/* essay end */
+
+	#kontemplato .owl-carousel .item {
+		min-height: 650px;
+	}
+
+	#kontemplato .highlight .badge {
+		font-size: 1.1rem;
+	}
+
+	#kontemplato .highlight .date {
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .judul {
+		font-size: 1.5rem;
+	}
+
+	#kontemplato .highlight .penulis {
+		font-size: 1.1rem;
+	}
+
+	#baca .badge {
+		margin-top: 40px;
+	}
+
+	#baca .date {
+		font-size: 1.1rem;
+	}
+
+	#baca .tagline {
+		font-size: 1.15rem;
+	}
+
+	#baca .konten-tulisan {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	#baca .konten-tulisan * {
+		font-size: 1rem !important;
+		font-family: var(--font-family-primary) !important;
+		line-height: 1.5 !important;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	/* hero start */
+	#hero .hero-caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 920px;
+		z-index: 1;
+	}
+
+	#hero .hero-caption .badge {
+		font-size: 1rem;
+	}
+
+	#hero .hero-caption .judul {
+		font-size: 2.2rem;
+	}
+
+	#hero .hero-caption .penulis {
+		font-size: 1.3rem;
+	}
+
+	#hero .hero-caption .tagline {
+		font-size: 1rem;
+	}
+
+	#hero .hero-caption .date {
+		font-size: 0.8rem;
+	}
+	/* hero end */
+
+	/* essay start */
+	#ornamen .essay-highlight .item .redaksi {
+		padding: 1rem 1rem 0;
+	}
+
+	#ornamen .essay-highlight .judul {
+		font-size: 1.2rem;
+	}
+
+	#ornamen .essay-highlight .penulis {
+		font-size: 1rem;
+	}
+
+	#ornamen .essay-highlight .item {
+		min-height: 650px;
+	}
+
+	#ornamen .owl-carousel .item {
+		min-height: 650px;
+	}
+
+	#ornamen .owl-carousel .item .higlight {
+		min-height: 650px;
+	}
+
+	#ornamen .item .highlight .judul {
+		padding: 0 1rem;
+		font-size: 1.1rem;
+	}
+
+	#ornamen .item .highlight .penulis {
+		padding: 0 1rem;
+		font-size: 0.9rem;
+	}
+
+	#ornamen .item .overlay .date {
+		font-size: 1rem;
+	}
+
+	#ornamen .item .overlay .tagline {
+		font-size: 1rem;
+		margin-top: 2.2rem;
+	}
+	/* essay end */
+
+	/* preview-majalah start */
+	#preview-majalah .series {
+		font-size: 1.3rem;
+	}
+
+	#preview-majalah .desc .tagline {
+		font-size: 1rem;
+	}
+
+	#preview-majalah .desc .substr * {
+		font-size: 1rem !important;
+		line-height: 1.3 !important;
+	}
+	/* preview-majalah end */
+
+	#kontemplato .highlight .judul {
+		font-size: 1.3rem;
+	}
+
+	#baca .badge {
+		font-size: 1rem;
+		margin-top: 30px;
+	}
+
+	#baca .date {
+		font-size: 1rem;
+	}
+
+	#baca .judul {
+		font-size: 2.3rem;
+	}
+
+	#baca .penulis {
+		font-size: 1.4rem;
+	}
+
+	#baca .tagline {
+		font-size: 1.1rem;
+	}
+
+	#baca .konten-tulisan {
+		font-size: 1rem;
+	}
+
+	#baca .konten-tulisan * {
+		font-size: 1rem !important;
+		font-family: var(--font-family-primary) !important;
+		line-height: 1.5 !important;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#navbar-index .navbar-brand {
+		font-size: 1.7rem;
+	}
+
+	.navbar .navbar-brand {
+		font-size: 1.7rem;
+	}
+
+	#navbar-index .navbar-nav {
+		font-size: 1rem;
+	}
+
+	#hero .logo {
+		font-size: 1.7rem;
+	}
+
+	#hero .hero-caption {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 720px;
+		width: 100%;
+		z-index: 1;
+	}
+
+	#ornamen .essay-highlight .item .redaksi {
+		padding: 0.8rem 0.8rem;
+	}
+
+	#ornamen .essay-highlight .judul {
+		font-size: 1.15rem;
+	}
+
+	#ornamen .essay-highlight .penulis {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .essay-highlight .tagline {
+		font-size: 0.8rem;
+	}
+
+	#ornamen .essay-highlight .date {
+		font-size: 0.8rem;
+	}
+
+	#ornamen .essay-highlight .btn {
+		font-size: 0.8rem;
+	}
+
+	#ornamen .essay-highlight .item {
+		min-height: 600px;
+	}
+
+	#ornamen .owl-carousel .item {
+		min-height: 600px;
+	}
+
+	#ornamen .item .highlight .badge {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .item .highlight .date {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .item .highlight .judul {
+		padding: 0 0.8rem;
+		font-size: 1rem;
+	}
+
+	#ornamen .item .highlight .penulis {
+		padding: 0 0.9rem;
+		font-size: 0.9rem;
+	}
+
+	#ornamen .item .overlay .badge {
+		font-size: 0.95rem;
+	}
+
+	#ornamen .item .overlay .date {
+		font-size: 0.95rem;
+	}
+
+	#ornamen .item .overlay .tagline {
+		font-size: 0.9rem;
+		margin-top: 1.8rem;
+	}
+
+	#ornamen .item .overlay .btn {
+		font-size: 0.7rem !important;
+	}
+
+	#preview-majalah .btn {
+		font-size: 0.9rem;
+	}
+
+	#preview-majalah .desc .tagline {
+		font-size: 1.1rem;
+	}
+
+	#kontemplato .owl-carousel .item {
+		min-height: 600px;
+	}
+
+	#kontemplato .highlight .judul {
+		font-size: 1.2rem;
+	}
+
+	#kontemplato .highlight .penulis {
+		font-size: 1rem;
+	}
+
+	.ilustrator {
+		font-size: 0.7rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#hero .hero-caption {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	#kontemplato .owl-carousel .item {
+		min-height: 600px;
+	}
+
+	#comics .comic img {
+		width: calc(100% / 2);
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.back {
+		font-size: 1.8rem;
+	}
+
+	#navbar-index .navbar-brand {
+		font-size: 1.5rem;
+	}
+
+	.navbar .navbar-brand {
+		font-size: 1.5rem;
+	}
+
+	#navbar-index .navbar-nav {
+		font-size: 1rem;
+	}
+
+	#hero .logo {
+		font-size: 1.5rem;
+	}
+
+	#hero .hero-caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		overflow: hidden;
+	}
+
+	#hero .hero-caption .badge {
+		font-size: 1rem;
+	}
+
+	#hero .hero-caption .judul {
+		font-size: 1.7rem;
+	}
+
+	#hero .hero-caption .penulis {
+		margin: 1.5rem 0;
+		font-size: 1.1rem;
+	}
+
+	#hero .hero-caption .tagline {
+		margin: 1.5rem 0;
+		font-size: 1rem;
+	}
+
+	#hero .hero-caption .date {
+		font-size: 0.9rem;
+	}
+
+	#ornamen .owl-carousel {
+		position: relative;
+	}
+
+	#ornamen .owl-nav {
+		margin-top: 0;
+	}
+
+	#ornamen .owl-carousel .owl-nav .owl-prev {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		font-size: 30px;
+		width: 35px;
+		color: #fff;
+		background-color: var(--dark);
+		border-radius: 5px;
+	}
+
+	#ornamen .owl-carousel .owl-nav .owl-next {
+		position: absolute;
+		top: 40%;
+		right: 0;
+		font-size: 30px;
+		width: 35px;
+		color: #fff;
+		background-color: var(--dark);
+		border-radius: 5px;
+	}
+
+	#ornamen .owl-carousel .item {
+		min-height: 680px;
+	}
+
+	#ornamen .owl-carousel .item .highlight {
+		padding: 4rem 0 0;
+	}
+
+	#ornamen .item .highlight .badge {
+		font-size: 1rem;
+	}
+
+	#ornamen .item .highlight .judul {
+		font-size: 1.2rem;
+		padding: 0 1.5rem;
+	}
+
+	#ornamen .item .highlight .tagline {
+		font-size: 0.9rem;
+		padding: 0 1.5rem;
+	}
+
+	#ornamen .item .highlight .penulis {
+		padding: 0 1.5rem;
+	}
+
+	#ornamen .item .highlight .btn {
+		font-size: 0.9rem;
+		margin: 1rem 1.5rem 0;
+	}
+
+	#preview-majalah .series {
+		font-size: 1.4rem;
+	}
+
+	#preview-majalah .ilustrator {
+		font-size: 0.8rem;
+	}
+
+	#preview-majalah .desc {
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	#preview-majalah .desc .tagline {
+		font-size: 0.95rem;
+		margin: 1.2rem 0;
+	}
+
+	#preview-majalah .desc .substr * {
+		font-size: 0.9rem !important;
+		line-height: 1.4 !important;
+	}
+
+	#preview-majalah .desc .penulis {
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .owl-carousel {
+		position: relative;
+	}
+
+	#kontemplato .owl-carousel .item {
+		min-height: 680px;
+	}
+
+	#kontemplato .highlight .badge {
+		font-size: 1rem;
+	}
+
+	#kontemplato .highlight .date {
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .judul {
+		font-size: 1.2rem;
+	}
+
+	#kontemplato .highlight .penulis {
+		font-size: 1rem;
+	}
+
+	#kontemplato .highlight .tagline {
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .penulis {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .btn {
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .owl-nav {
+		margin-top: 0;
+	}
+
+	#kontemplato .owl-carousel .owl-nav .owl-prev {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		font-size: 30px;
+		width: 35px;
+		color: #fff;
+		background-color: var(--dark);
+		border-radius: 5px;
+	}
+
+	#kontemplato .owl-carousel .owl-nav .owl-next {
+		position: absolute;
+		top: 40%;
+		right: 0;
+		font-size: 30px;
+		width: 35px;
+		color: #fff;
+		background-color: var(--dark);
+		border-radius: 5px;
+	}
+
+	#baca .judul {
+		font-size: 1.8rem;
+	}
+
+	#baca .penulis {
+		font-size: 1.1rem;
+	}
+
+	#baca .tagline {
+		font-size: 1rem;
+	}
+
+	#baca .konten-tulisan {
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	#baca .konten-tulisan * {
+		font-size: 0.9rem !important;
+		font-family: var(--font-family-primary) !important;
+		line-height: 1.4 !important;
+	}
+}
