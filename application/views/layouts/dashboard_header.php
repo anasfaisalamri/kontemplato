@@ -22,6 +22,15 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+  <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
+  <style>
+    trix-toolbar [data-trix-button-group="file-tools"] {
+      display: none
+    }
+  </style>
+
 </head>
 
 <body id="page-top">
