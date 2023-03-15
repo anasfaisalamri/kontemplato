@@ -10,17 +10,16 @@
     <div class="col-md-6">
       <?= $this->session->flashdata('message'); ?>
     </div>
-
     <div class="col-md-12">
-      <a href="user/create" class="btn btn-primary mb-3">Add Post</a>
-
-      <table class="table">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Writer</th>
             <th scope="col">Title</th>
             <th scope="col">Tagline</th>
             <th scope="col">Approved</th>
+            <th scope="col">Created at</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -29,12 +28,15 @@
           <?php foreach ($user_posts as $post) { ?>
             <tr>
               <th scope="row"><?= $i++; ?></th>
+              <td><?= $post['writer_name']; ?></td>
               <td><?= $post['title']; ?></td>
               <td><?= $post['tagline']; ?></td>
               <td><?= $post['approved']; ?></td>
+              <td><?= date('d F Y', strtotime($post['created_at'])); ?></td>
               <td>
-                <a href="<?= base_url('user/edit/') . $post['id']; ?>" class="badge text-bg-success">edit</a>
-                <a href="<?= base_url('user/show/') . $post['id']; ?>" class="badge text-bg-info">view</a>
+                <a href="<?= base_url('userposts/update/') . $post['id']; ?>" class="badge text-bg-success">edit</a>
+                <a href="<?= base_url('userposts/show/') . $post['id']; ?>" class="badge text-bg-info">view</a>
+                <a href="<?= base_url('userposts/delete/') . $post['id']; ?>" class="badge text-bg-danger">delete</a>
               </td>
             </tr>
           <?php } ?>
@@ -42,6 +44,5 @@
       </table>
     </div>
   </div>
-
 
 </div>
