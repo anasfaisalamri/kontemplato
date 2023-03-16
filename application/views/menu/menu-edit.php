@@ -11,7 +11,7 @@
         <input type="hidden" name="id" value="<?= $menu['id']; ?>">
         <div class="form-group">
           <label for="menu">Menu Name</label>
-          <input type="Text" class="form-control" id="menu" name="menu" value="<?= $menu['menu']; ?>">
+          <input type="Text" class="form-control" id="menu" name="menu" value="<?= $menu['menu']; ?>" autofocus>
           <?= form_error('menu', '<small class="text-danger">', '</small>'); ?>
         </div>
 

@@ -13,13 +13,6 @@
   <hr class="sidebar-divider">
 
   <!-- Nav Item - Dashboard -->
-  <!-- <li class="nav-item active">
-    <a class="nav-link" href="index.html">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span></a>
-  </li> -->
-
-  <!-- Nav Item - Dashboard -->
   <?php
   $role_id = $this->session->userdata('role_id');
   $queryMenu = "SELECT `user_menu`.`id`, `menu`
@@ -34,7 +27,7 @@
 
   <?php foreach ($menu as $m) { ?>
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <div class="sidebar-heading <?= strtolower($m['menu']); ?>">
       <?= $m['menu']; ?>
     </div>
 
@@ -63,7 +56,7 @@
       <?php } ?>
 
       <!-- Divider -->
-      <hr class="sidebar-divider mt-3">
+      <hr class="sidebar-divider mt-3 <?= strtolower($m['menu']); ?>">
     <?php } ?>
 
     <li class="nav-item">

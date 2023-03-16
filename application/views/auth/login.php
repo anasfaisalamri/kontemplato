@@ -47,11 +47,11 @@
 
                   <form class="user" action="<?= base_url('auth'); ?>" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
+                      <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>" autocomplete="off" autofocus required>
                       <?= form_error('email', '<small class="text-danger ps-2">', '</small>'); ?>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password" required>
                       <?= form_error('password', '<small class="text-danger ps-2">', '</small>'); ?>
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">

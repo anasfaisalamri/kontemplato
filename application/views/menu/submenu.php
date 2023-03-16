@@ -40,8 +40,8 @@
                   <td><?= $sm['icon']; ?></td>
                   <td><?= $sm['is_active']; ?></td>
                   <td>
-                    <a href="<?= base_url('menu/submenuedit/') ?><?= $sm['id']; ?>" class="badge badge-success">edit</a>
-                    <a href="<?= base_url('menu/submenudelete/') ?><?= $sm['id']; ?>" onclick="return confirm('delete this menu?');" class="badge badge-danger">delete</a>
+                    <a href="<?= base_url('menu/submenuedit/') ?><?= $sm['id']; ?>" class="badge text-bg-success">edit</a>
+                    <a href="<?= base_url('menu/submenudelete/') ?><?= $sm['id']; ?>" onclick="return confirm('delete this menu?');" class="badge text-bg-danger">delete</a>
                   </td>
                 </tr>
                 <?php $i++; ?>

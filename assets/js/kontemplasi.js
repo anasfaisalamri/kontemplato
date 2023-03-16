@@ -1,56 +1,54 @@
-let jenisContent = document.querySelector("#jenis_content");
+let category = document.querySelector("#category");
 let volume = document.querySelector("#volume");
 let hlCheck = document.querySelector(".highlight");
 let comicInput = document.querySelector("#comic");
-let tema = document.querySelector("#tema");
+let theme = document.querySelector("#theme");
 
 let coverInput = document.querySelector("#cover");
 let inputHighlight = document.querySelector("input#highlight-input");
 
-console.log(tema);
+if ((category.value = 1)) {
+	volume.setAttribute("disabled", "disabled");
 
-if ((jenisContent.value = 1)) {
-  volume.setAttribute("disabled", "disabled");
+	hlCheck.setAttribute("disabled", "disabled");
 
-  hlCheck.setAttribute("disabled", "disabled");
+	comicInput.setAttribute("disabled", "disabled");
 
-  comicInput.setAttribute("disabled", "disabled");
+	coverInput.setAttribute("disabled", "disabled");
 
-  coverInput.setAttribute("disabled", "disabled");
-
-  tema.setAttribute("disabled", "disabled");
+	theme.setAttribute("disabled", "disabled");
 }
 
-jenisContent.addEventListener("click", function () {
-  if (jenisContent.value == "1") {
-    volume.setAttribute("disabled", "disabled");
+category.addEventListener("click", function () {
+	if (category.value == "1") {
+		volume.setAttribute("disabled", "disabled");
 
-    hlCheck.setAttribute("disabled", "disabled");
+		hlCheck.setAttribute("disabled", "disabled");
 
-    comicInput.setAttribute("disabled", "disabled");
+		comicInput.setAttribute("disabled", "disabled");
 
-    coverInput.setAttribute("disabled", "disabled");
+		coverInput.setAttribute("disabled", "disabled");
 
-    tema.setAttribute("disabled", "disabled");
-  } else {
-    volume.removeAttribute("disabled");
+		theme.setAttribute("disabled", "disabled");
+	} else {
+		volume.removeAttribute("disabled");
 
-    hlCheck.removeAttribute("disabled");
-  }
+		hlCheck.removeAttribute("disabled");
+	}
 });
 
 inputHighlight.addEventListener("click", function () {
-  if (inputHighlight.checked == true) {
-    comicInput.removeAttribute("disabled");
+	if (inputHighlight.checked == true) {
+		comicInput.removeAttribute("disabled");
 
-    coverInput.removeAttribute("disabled");
+		coverInput.removeAttribute("disabled");
 
-    tema.removeAttribute("disabled", "disabled");
-  } else {
-    tema.setAttribute("disabled", "disabled");
+		theme.removeAttribute("disabled", "disabled");
+	} else {
+		theme.setAttribute("disabled", "disabled");
 
-    comicInput.setAttribute("disabled", "disabled");
+		comicInput.setAttribute("disabled", "disabled");
 
-    coverInput.setAttribute("disabled", "disabled");
-  }
+		coverInput.setAttribute("disabled", "disabled");
+	}
 });

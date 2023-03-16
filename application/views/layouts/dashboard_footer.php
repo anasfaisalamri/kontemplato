@@ -43,7 +43,7 @@
 
 <!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/'); ?>js/jquery.min.js"></script>
-<script src="<?= base_url('assets/'); ?>bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/'); ?>js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url('assets/'); ?>js/jquery.easing.min.js"></script>

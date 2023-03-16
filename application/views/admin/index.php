@@ -32,8 +32,8 @@
           <td><?= $user['role_id']; ?></td>
           <td><?= $user['is_active']; ?></td>
           <td>
-            <a href="<?= base_url('admin/useredit/') . $user['id']; ?>" class="badge badge-success">edit</a>
-            <a href="<?= base_url('admin/userdelete/') . $user['id']; ?>" onclick="return confirm('delete this user?')" class="badge badge-danger">delete</a>
+            <a href="<?= base_url('admin/useredit/') . $user['id']; ?>" class="badge text-bg-success">edit</a>
+            <a href="<?= base_url('admin/userdelete/') . $user['id']; ?>" onclick="return confirm('delete this user?')" class="badge text-bg-danger">delete</a>
           </td>
         </tr>
       <?php } ?>

@@ -12,7 +12,7 @@
         <div class="mb-3 row">
           <label for="title" class="col-sm-2 col-form-label">Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="title" name="title" value="<?= set_value('title'); ?>">
+            <input type="text" class="form-control" id="title" name="title" value="<?= set_value('title'); ?>" autofocus>
             <?= form_error('title', '<small class="text-danger">', '</small>'); ?>
           </div>
         </div>

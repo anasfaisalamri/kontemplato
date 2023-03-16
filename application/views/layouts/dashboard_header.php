@@ -25,12 +25,7 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
   <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
-  <style>
-    trix-toolbar [data-trix-button-group="file-tools"] {
-      display: none
-    }
-  </style>
-
+  <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/.css">
 </head>
 
 <body id="page-top">
