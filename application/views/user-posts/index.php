@@ -11,7 +11,7 @@
       <?= $this->session->flashdata('message'); ?>
     </div>
     <div class="col-md-12">
-      <table class="table table-hover">
+      <table class="table table-hover table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>

@@ -13,7 +13,7 @@
 
       <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Add New Role</a>
 
-      <table class="table table-hover">
+      <table class="table table-hover table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>

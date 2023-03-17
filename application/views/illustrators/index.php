@@ -15,7 +15,7 @@
 
       <a href="" class="btn btn-primary mb-4" data-toggle="modal" data-target="#newIllustratorModal">Add New Illustrator</a>
 
-      <table class="table table-hover mb-5">
+      <table class="table table-hover table-striped mb-5">
         <thead>
           <tr>
             <th scope="col">#</th>

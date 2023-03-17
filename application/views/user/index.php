@@ -14,7 +14,7 @@
     <div class="col-md-12">
       <a href="user/create" class="btn btn-primary mb-3">Add Post</a>
 
-      <table class="table">
+      <table class="table table-hover table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
