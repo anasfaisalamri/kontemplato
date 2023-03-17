@@ -21,11 +21,11 @@ class Writers extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Writers';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('writers/index', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/writers/index', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $writer = htmlspecialchars($this->input->post('writer', true));
       $this->db->insert('writers', ['writer' => $writer]);
@@ -52,11 +52,11 @@ class Writers extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit ' . $data['writer']['writer'];
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('writers/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/writers/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $writer = htmlspecialchars($this->input->post('writer', true));
       $this->db->set('writer', $writer);

@@ -17,11 +17,11 @@ class Admin extends CI_Controller
 
     $data['title'] = 'Dashboard';
 
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('admin/index', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/admin/index', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function userEdit($id)
@@ -37,11 +37,11 @@ class Admin extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit User';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('admin/useredit', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/admin/useredit', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $role_id = $this->input->post('role_id');
       $is_active = $this->input->post('is_active');
@@ -75,11 +75,11 @@ class Admin extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Role';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('admin/role', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/admin/role', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $role = $this->input->post('role');
 
@@ -101,11 +101,11 @@ class Admin extends CI_Controller
     $this->db->where(('id !=' . 1));
     $data['menu'] = $this->db->get('user_menu')->result_array();
 
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('admin/role-access', $data);
-    $this->load->view('layouts/dashboard_footer');
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/admin/role-access', $data);
+    $this->load->view('dashboard/layouts/footer');
   }
 
   public function changeAccess()
@@ -139,11 +139,11 @@ class Admin extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Role Edit';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('admin/roleedit', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/admin/roleedit', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $role = $this->input->post('role');
 

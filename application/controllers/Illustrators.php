@@ -21,11 +21,11 @@ class Illustrators extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Illustrators';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('illustrators/index', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/illustrators/index', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $illustrator = htmlspecialchars($this->input->post('illustrator', true));
       $this->db->insert('illustrators', ['illustrator' => $illustrator]);
@@ -52,11 +52,11 @@ class Illustrators extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit ' . $data['illustrator']['illustrator'];
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('illustrators/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/illustrators/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $illustrator = htmlspecialchars($this->input->post('illustrator', true));
       $this->db->set('illustrator', $illustrator);

@@ -18,11 +18,11 @@ class User extends CI_Controller
     $data['user_posts'] = $this->db->get_where('user_posts', ['writer_name' => $writer_name])->result_array();
 
     $data['title'] = 'My Profile';
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('user/index', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/user/index', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function create()
@@ -35,11 +35,11 @@ class User extends CI_Controller
     $this->form_validation->set_rules('body', 'Body', 'required');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('user/create', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/user/create', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $writer = $data['user']['name'];
       $validatedData = [
@@ -69,11 +69,11 @@ class User extends CI_Controller
     $this->form_validation->set_rules('body', 'Body', 'required');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('user/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/user/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $title = htmlspecialchars($this->input->post('title', true));
       $tagline = htmlspecialchars($this->input->post('tagline', true));
@@ -99,10 +99,10 @@ class User extends CI_Controller
 
     $data['title'] = 'View My Post';
 
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('user/view', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/user/view', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 }

@@ -16,11 +16,11 @@ class UserPosts extends CI_Controller
     $data['user_posts'] = $this->db->get('user_posts')->result_array();
 
     $data['title'] = 'User Posts';
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('user-posts/index', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/user-posts/index', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function update($id)
@@ -33,11 +33,11 @@ class UserPosts extends CI_Controller
     $this->form_validation->set_rules('approved', 'Approved', 'required');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('user-posts/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/user-posts/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $this->db->set('approved', $this->input->post('approved', true));
       $this->db->set('updated_at', date('Y-m-d H:i:s'));
@@ -55,11 +55,11 @@ class UserPosts extends CI_Controller
     $data['post'] = $this->db->get_where('user_posts', ['id' => $id])->row_array();
 
     $data['title'] = 'View User Post : ' . $data['post']['title'];
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('user-posts/view', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/user-posts/view', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function delete($id)

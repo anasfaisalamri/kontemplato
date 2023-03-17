@@ -39,11 +39,11 @@ class Posts extends CI_Controller
     $data['start'] = $this->uri->segment(3);
     $data['allPosts'] = $this->kontemplato->getAllPosts($config['per_page'], $data['start'], $data['keyword']);
 
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('posts/index', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/posts/index', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function show($id)
@@ -52,11 +52,11 @@ class Posts extends CI_Controller
     $data['post'] = $this->kontemplato->getPostById($id);
 
     $data['title'] = 'View Post';
-    $this->load->view('layouts/dashboard_header', $data);
-    $this->load->view('layouts/dashboard_sidebar', $data);
-    $this->load->view('layouts/dashboard_topbar', $data);
-    $this->load->view('posts/view', $data);
-    $this->load->view('layouts/dashboard_footer', $data);
+    $this->load->view('dashboard/layouts/header', $data);
+    $this->load->view('dashboard/layouts/sidebar', $data);
+    $this->load->view('dashboard/layouts/topbar', $data);
+    $this->load->view('dashboard/posts/view', $data);
+    $this->load->view('dashboard/layouts/footer', $data);
   }
 
   public function create()
@@ -94,11 +94,11 @@ class Posts extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Create Posts';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('posts/create', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/posts/create', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $validatedData = [
         'category_id' => $this->input->post('category_id', true),
@@ -145,11 +145,11 @@ class Posts extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit Post';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('posts/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/posts/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $validatedData = [
         'id' => $this->input->post('id', true),

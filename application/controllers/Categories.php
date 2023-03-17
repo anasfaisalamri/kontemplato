@@ -21,11 +21,11 @@ class Categories extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Categories';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('categories/index', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/categories/index', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $category = htmlspecialchars($this->input->post('category', true));
       $this->db->insert('categories', ['category' => $category]);
@@ -52,11 +52,11 @@ class Categories extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit ' . $data['category']['category'];
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('categories/edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/categories/edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $category = htmlspecialchars($this->input->post('category', true));
       $this->db->set('category', $category);

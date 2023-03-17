@@ -22,11 +22,11 @@ class Menu extends CI_Controller
     ]);
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('menu/index', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/menu/index', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New menu added!</div>');
@@ -54,11 +54,11 @@ class Menu extends CI_Controller
     ]);
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('menu/menu-edit', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/menu/menu-edit', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $menu = $this->input->post('menu');
 
@@ -87,11 +87,11 @@ class Menu extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Submenu Management';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('menu/submenu', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/menu/submenu', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $data = [
         'title' => $this->input->post('title'),
@@ -121,11 +121,11 @@ class Menu extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Edit Sub Menu';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('menu/submenu-edit', $data);
-      $this->load->view('layouts/dashboard_footer');
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/menu/submenu-edit', $data);
+      $this->load->view('dashboard/layouts/footer');
     } else {
       $id = $this->input->post('id');
       $data = [

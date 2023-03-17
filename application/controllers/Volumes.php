@@ -21,11 +21,11 @@ class Volumes extends CI_Controller
 
     if ($this->form_validation->run() == false) {
       $data['title'] = 'Volumes';
-      $this->load->view('layouts/dashboard_header', $data);
-      $this->load->view('layouts/dashboard_sidebar', $data);
-      $this->load->view('layouts/dashboard_topbar', $data);
-      $this->load->view('volumes/index', $data);
-      $this->load->view('layouts/dashboard_footer', $data);
+      $this->load->view('dashboard/layouts/header', $data);
+      $this->load->view('dashboard/layouts/sidebar', $data);
+      $this->load->view('dashboard/layouts/topbar', $data);
+      $this->load->view('dashboard/volumes/index', $data);
+      $this->load->view('dashboard/layouts/footer', $data);
     } else {
       $volume = htmlspecialchars($this->input->post('volume', true));
       $this->db->insert('volumes', ['volume' => $volume]);
