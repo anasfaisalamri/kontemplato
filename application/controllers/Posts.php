@@ -46,10 +46,10 @@ class Posts extends CI_Controller
     $this->load->view('dashboard/layouts/footer', $data);
   }
 
-  public function show($id)
+  public function show($slug)
   {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    $data['post'] = $this->kontemplato->getPostById($id);
+    $data['post'] = $this->kontemplato->getPostBySlug($slug);
 
     $data['title'] = 'View Post';
     $this->load->view('dashboard/layouts/header', $data);
@@ -130,15 +130,14 @@ class Posts extends CI_Controller
     }
   }
 
-  public function edit($id)
+  public function edit($slug)
   {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    $data['post'] = $this->kontemplato->getPostById($id);
+    $data['post'] = $this->kontemplato->getPostBySlug($slug);
 
     $data['categories'] = $this->kontemplato->getCategories();
     $data['writers'] = $this->kontemplato->getWriters();
     $data['illustrators'] = $this->kontemplato->getIllustrators();
-
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('body', 'Body', 'required');

@@ -4,7 +4,7 @@
   <!-- Page Heading -->
   <div class="mb-4">
     <a href="<?= base_url('posts'); ?>" class="btn btn-warning">Back to All Posts</a>
-    <a href="<?= base_url('posts/edit/') . $post['id']; ?>" class="btn btn-success">Edit</a>
+    <a href="<?= base_url('posts/edit/') . $post['slug']; ?>" class="btn btn-success">Edit</a>
   </div>
 
   <div class="row justify-content-center">

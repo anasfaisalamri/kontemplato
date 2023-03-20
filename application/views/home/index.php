@@ -1,18 +1,12 @@
-<!doctype html>
-<html lang="en">
+<?php include_once 'partials/navbar.php' ?>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="<?= base_url('assets/'); ?>css/bootstrap.min.css" rel="stylesheet">
+<div class="content" id="content">
+  <div data-bs-target="#navbar-index" data-bs-spy="scroll" data-bs-smooth-scroll="true" tabindex="0">
 
-  <title><?= $title; ?></title>
-  <link rel="shortcut icon" href="<?= base_url('assets/'); ?>img/icon/logo.png" type="image/x-icon">
-</head>
+    <?php include_once 'section/hero.php' ?>
+    <?php include_once 'section/ornamen.php' ?>
+    <?php include_once 'section/preview-kontemplato.php' ?>
+    <?php include_once 'section/kontemplato.php' ?>
 
-<body>
-  <h1>Hello, world!</h1>
-  <script src="<?= base_url('assets/'); ?>js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+  </div>
+</div>

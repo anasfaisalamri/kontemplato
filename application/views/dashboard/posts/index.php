@@ -56,8 +56,8 @@
                 <td><?= date('d F Y', strtotime($item['created_at'])); ?></td>
                 <td><?= date('d F Y', strtotime($item['updated_at'])); ?></td>
                 <td>
-                  <a href="<?= base_url('posts/show/') . $item['id']; ?>" class="badge text-bg-info">view</a>
-                  <a href="<?= base_url('posts/edit/') . $item['id']; ?>" class="badge text-bg-success">edit</a>
+                  <a href="<?= base_url('posts/show/') . $item['slug']; ?>" class="badge text-bg-info">view</a>
+                  <a href="<?= base_url('posts/edit/') . $item['slug']; ?>" class="badge text-bg-success">edit</a>
                 </td>
               </tr>
             <?php } ?>

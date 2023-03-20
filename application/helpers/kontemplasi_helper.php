@@ -6,6 +6,14 @@ function insertPost($validatedData, $artwork, $cover, $comic)
   $ci->db->trans_begin();
   $ci->load->library('upload');
 
+  // $title = str_replace([
+  //   '\'', '"',
+  //   ',', ';', '<', '>', '!', ':'
+  // ], '', strtolower($validatedData['title']));
+  $title = preg_replace('/[^\p{L}\p{N}\s]/u', '', strtolower($validatedData['title']));
+  $out = explode(' ', $title);
+  $slug = implode('-', $out);
+
   $postsData = [
     'category_id' => $validatedData['category_id'],
     'writer_id' => $validatedData['writer_id'],
@@ -13,6 +21,7 @@ function insertPost($validatedData, $artwork, $cover, $comic)
     'volume_id' => $validatedData['volume_id'],
     'is_highlight' => $validatedData['is_highlight'],
     'title' => $validatedData['title'],
+    'slug' => $slug,
     'tagline' => $validatedData['tagline'],
     'body' => $validatedData['body'],
     'theme' => $validatedData['theme'],
@@ -34,7 +43,7 @@ function insertPost($validatedData, $artwork, $cover, $comic)
   }
 
   if (!empty($comic)) {
-    uploadComic($last_id, $postsData['illustrator_id'], $postsData['created_at']);
+    uploadComic($last_id, $postsData['slug'], $postsData['illustrator_id'], $postsData['created_at']);
   } else {
     return;
   }
@@ -100,7 +109,7 @@ function uploadCover($last_id, $illustrator, $date)
   }
 }
 
-function uploadComic($last_id, $illustrator, $date)
+function uploadComic($last_id, $slug, $illustrator, $date)
 {
   $ci = get_instance();
 
@@ -124,6 +133,7 @@ function uploadComic($last_id, $illustrator, $date)
         'extension' => $ci->upload->data('file_ext'),
         'size' => $ci->upload->data('file_size'),
         'post_id' => $last_id,
+        'slug' => $slug,
         'illustrator_id' => $illustrator,
         'created_at' => $date,
         'updated_at' => $date
@@ -143,10 +153,15 @@ function updatePost($validatedData)
   $ci = get_instance();
   $updated_at = date('Y-m-d H:i:s');
 
+  $title = preg_replace('/[^\p{L}\p{N}\s]/u', '', strtolower($validatedData['title']));
+  $out = explode(' ', $title);
+  $slug = implode('-', $out);
+
   $ci->db->set('category_id', $validatedData['category_id']);
   $ci->db->set('writer_id', $validatedData['writer_id']);
   $ci->db->set('illustrator_id', $validatedData['illustrator_id']);
   $ci->db->set('title', $validatedData['title']);
+  $ci->db->set('slug', $slug);
   $ci->db->set('tagline', $validatedData['tagline']);
   $ci->db->set('body', $validatedData['body']);
   $ci->db->set('updated_at', $updated_at);
