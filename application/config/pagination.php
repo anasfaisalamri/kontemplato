@@ -1,7 +1,7 @@
 <?php
 
 // config
-$config['base_url'] = 'http://localhost:8080/kontemplato/posts/index';
+$config['base_url'] = 'http://localhost/kontemplato/posts/index';
 $config['num_links'] = 5;
 
 // styling
