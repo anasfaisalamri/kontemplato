@@ -155,6 +155,8 @@ class Posts extends CI_Controller
         'category_id' => $this->input->post('category_id', true),
         'writer_id' => $this->input->post('writer_id', true),
         'illustrator_id' => $this->input->post('illustrator_id', true),
+        'is_active' => intval($this->input->post('is_active', true)),
+        'theme' => $this->input->post('theme', true),
         'title' => $this->input->post('title', true),
         'tagline' => $this->input->post('tagline', true),
         'body' => $this->input->post('body', true),
