@@ -11,6 +11,7 @@
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="<?= base_url(); ?>#ornamen">ornamen</a>
         <a class="nav-link" href="<?= base_url(); ?>#kontemplato">kontemplato</a>
+        <a class="nav-link" href="<?= base_url('home/posts'); ?>"><i class="fa-solid fa-magnifying-glass"></i></a>
       </div>
     </div>
   </div>
