@@ -37,6 +37,7 @@ trix-toolbar [data-trix-button-group="file-tools"] {
 	font-size: 18px;
 	line-height: 26px;
 	margin: 1rem 0 5rem;
+	text-align: justify;
 }
 
 #view .body * {
