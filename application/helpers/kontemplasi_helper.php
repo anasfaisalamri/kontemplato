@@ -20,6 +20,7 @@ function insertPost($validatedData, $artwork, $cover, $comic)
     'illustrator_id' => $validatedData['illustrator_id'],
     'volume_id' => $validatedData['volume_id'],
     'is_highlight' => $validatedData['is_highlight'],
+    'is_active' => 1,
     'title' => $validatedData['title'],
     'slug' => $slug,
     'tagline' => $validatedData['tagline'],
@@ -160,6 +161,8 @@ function updatePost($validatedData)
   $ci->db->set('category_id', $validatedData['category_id']);
   $ci->db->set('writer_id', $validatedData['writer_id']);
   $ci->db->set('illustrator_id', $validatedData['illustrator_id']);
+  $ci->db->set('is_active', $validatedData['is_active']);
+  $ci->db->set('theme', $validatedData['theme']);
   $ci->db->set('title', $validatedData['title']);
   $ci->db->set('slug', $slug);
   $ci->db->set('tagline', $validatedData['tagline']);
