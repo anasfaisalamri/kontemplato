@@ -134,6 +134,18 @@ a.up {
 	color: var(--primary);
 }
 
+#kontemplato-all .item .badge {
+	display: inline-block;
+	font-family: var(--font-family-secondary);
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	background-color: var(--dark);
+	border-radius: 0.3rem;
+	padding: 0.5rem 1rem;
+}
+
 #registrasi {
 	display: flex;
 	justify-content: center;
@@ -206,12 +218,14 @@ a.up {
 	font-weight: 800;
 	color: var(--primary);
 	cursor: pointer;
+	padding-left: 0;
 }
 
 .navbar .navbar-brand {
 	font-size: 2rem;
 	font-weight: 800;
 	color: #fff;
+	padding-left: 1rem;
 }
 
 #navbar-index .navbar-nav {
@@ -363,7 +377,7 @@ a.up {
 }
 /* hero end */
 
-/* essay start */
+/* ornamen start */
 #ornamen {
 	background-color: #eaeaea;
 	padding: 2.5rem 0;
@@ -561,7 +575,7 @@ a.up {
 	background-color: var(--dark);
 	border-radius: 5px;
 }
-/* essay end */
+/* ornamen end */
 
 /* preview majalah start */
 #preview-majalah {
@@ -766,7 +780,7 @@ a.up {
 }
 
 #baca .tagline {
-	margin: 1.2rem 0 2rem;
+	margin: 0.4rem 0 2rem;
 	font-size: 1.3rem;
 }
 
@@ -774,6 +788,7 @@ a.up {
 	font-size: 18px;
 	line-height: 26px;
 	margin: 1rem 0 5rem;
+	text-align: justify;
 }
 
 #baca .konten-tulisan * {
@@ -850,7 +865,7 @@ a.up {
 
 	/* essay start */
 	#ornamen .essay-highlight .judul {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 
 	#ornamen .essay-highlight .penulis {
@@ -904,11 +919,16 @@ a.up {
 	}
 
 	#kontemplato .highlight .judul {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 
 	#kontemplato .highlight .penulis {
 		font-size: 1.1rem;
+	}
+
+	#kontemplato .highlight .btn {
+		margin: 0 1.5rem;
+		font-size: 1rem;
 	}
 
 	#baca .badge {
@@ -1029,7 +1049,22 @@ a.up {
 	/* preview-majalah end */
 
 	#kontemplato .highlight .judul {
-		font-size: 1.3rem;
+		padding: 0 1.1rem;
+		font-size: 1.2rem;
+	}
+
+	#kontemplato .highlight .penulis {
+		padding: 0 1.1rem;
+		font-size: 1rem;
+	}
+
+	#kontemplato .highlight .tagline {
+		padding: 0 1.1rem;
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .btn {
+		margin: 0 1.1rem;
 	}
 
 	#baca .badge {
@@ -1117,11 +1152,11 @@ a.up {
 	}
 
 	#ornamen .essay-highlight .item {
-		min-height: 600px;
+		min-height: 500px;
 	}
 
 	#ornamen .owl-carousel .item {
-		min-height: 600px;
+		min-height: 500px;
 	}
 
 	#ornamen .item .highlight .badge {
@@ -1172,11 +1207,19 @@ a.up {
 	}
 
 	#kontemplato .highlight .judul {
-		font-size: 1.2rem;
+		font-size: 1.15rem;
 	}
 
 	#kontemplato .highlight .penulis {
-		font-size: 1rem;
+		font-size: 0.9rem;
+	}
+
+	#kontemplato .highlight .tagline {
+		font-size: 0.8rem;
+	}
+
+	#kontemplato .highlight .btn {
+		font-size: 0.8rem;
 	}
 
 	.ilustrator {
@@ -1294,30 +1337,31 @@ a.up {
 	}
 
 	#ornamen .item .highlight .badge {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	#ornamen .item .highlight .judul {
-		font-size: 1.2rem;
-		padding: 0 1.5rem;
+		font-size: 1.1rem;
+		padding: 0 1rem;
 	}
 
 	#ornamen .item .highlight .tagline {
-		font-size: 0.9rem;
-		padding: 0 1.5rem;
+		font-size: 0.8rem;
+		padding: 0 1rem;
 	}
 
 	#ornamen .item .highlight .penulis {
-		padding: 0 1.5rem;
+		padding: 0 0.9rem;
 	}
 
 	#ornamen .item .highlight .btn {
-		font-size: 0.9rem;
-		margin: 1rem 1.5rem 0;
+		font-size: 0.8rem;
+		margin: 1rem 1rem 0;
 	}
 
 	#preview-majalah .series {
-		font-size: 1.4rem;
+		font-size: 1.1rem;
+		padding: 0.5rem;
 	}
 
 	#preview-majalah .ilustrator {
@@ -1326,7 +1370,7 @@ a.up {
 
 	#preview-majalah .desc {
 		margin: 0 auto;
-		padding: 0 1.5rem;
+		padding: 0 1.2rem;
 	}
 
 	#preview-majalah .desc .tagline {
@@ -1347,12 +1391,17 @@ a.up {
 		position: relative;
 	}
 
+	#kontemplato .series {
+		font-size: 1.1rem;
+		padding: 0.5rem;
+	}
+
 	#kontemplato .owl-carousel .item {
 		min-height: 680px;
 	}
 
 	#kontemplato .highlight .badge {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	#kontemplato .highlight .date {
@@ -1360,24 +1409,24 @@ a.up {
 	}
 
 	#kontemplato .highlight .judul {
-		font-size: 1.2rem;
-	}
-
-	#kontemplato .highlight .penulis {
-		font-size: 1rem;
+		padding: 0 1rem;
+		font-size: 1.1rem;
 	}
 
 	#kontemplato .highlight .tagline {
-		font-size: 0.9rem;
+		padding: 0 1rem;
+		font-size: 0.8rem;
 	}
 
 	#kontemplato .highlight .penulis {
+		padding: 0 1rem;
 		margin-top: 0.5rem;
 		font-size: 0.9rem;
 	}
 
 	#kontemplato .highlight .btn {
-		font-size: 0.9rem;
+		margin: 1rem 1rem 0;
+		font-size: 0.8rem;
 	}
 
 	#kontemplato .owl-nav {
@@ -1406,8 +1455,17 @@ a.up {
 		border-radius: 5px;
 	}
 
+	#baca .badge {
+		font-size: 0.9rem;
+	}
+
+	#baca .date {
+		font-size: 0.9rem;
+		margin-top: 0.7rem;
+	}
+
 	#baca .judul {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 	}
 
 	#baca .penulis {
@@ -1427,5 +1485,14 @@ a.up {
 		font-size: 0.9rem !important;
 		font-family: var(--font-family-primary) !important;
 		line-height: 1.4 !important;
+	}
+
+	footer .section,
+	footer .section h5 {
+		font-size: 0.9rem !important;
+	}
+
+	footer .copy-right {
+		font-size: 0.8rem;
 	}
 }
