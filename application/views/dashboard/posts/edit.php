@@ -71,6 +71,28 @@
             <input type="text" name="tagline" id="tagline" class="form-control" value="<?= set_value('tagline') ? set_value('tagline') : $post["tagline"] ?>">
           </div>
         </div>
+
+        <?php if ($post['theme']) { ?>
+          <div class="row mb-3">
+            <label for="theme" class="col-form-label col-sm-2">Theme</label>
+            <div class="col-sm-10">
+              <input type="text" name="theme" id="theme" class="form-control" value="<?= set_value('theme') ? set_value('theme') : $post["theme"] ?>">
+            </div>
+          </div>
+        <?php } ?>
+
+        <div class="mb-3 row">
+          <label for="is_active" class="col-sm-2 col-form-label">Is Active</label>
+          <div class="col-sm-10">
+            <select class="form-select" name="is_active">
+              <?php if ($post['is_active'] == $post['is_active']) { ?>
+                <option value="<?= $post['is_active'] ?>" selected><?= $post['is_active']; ?></option>
+              <?php } ?>
+              <option value="0">0 : Sembunyikan Tulisan</option>
+              <option value="1">1 : Tampilkan Tulisan</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <div class="col-md-8">

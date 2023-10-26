@@ -8,7 +8,7 @@
 
 
   <div class="row mt-4">
-    <div class="col-md-4">
+    <div class="col-md-8">
       <?= form_error('category', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
       <?= $this->session->flashdata('message'); ?>
@@ -20,6 +20,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Description</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -29,6 +30,7 @@
             <tr>
               <th scope="row"><?= $i++; ?></th>
               <td><?= $item['category']; ?></td>
+              <td><?= $item['desc']; ?></td>
               <td>
                 <a href="<?= base_url('categories/edit/') . $item['id']; ?>" class="badge text-bg-success">edit</a>
                 <a href="<?= base_url('categories/delete/') . $item['id']; ?>" onclick="return confirm('delete category?')" class="badge text-bg-danger">delete</a>

@@ -36,7 +36,7 @@
               <td>
                 <a href="<?= base_url('userposts/update/') . $post['id']; ?>" class="badge text-bg-success">edit</a>
                 <a href="<?= base_url('userposts/show/') . $post['id']; ?>" class="badge text-bg-info">view</a>
-                <a href="<?= base_url('userposts/delete/') . $post['id']; ?>" class="badge text-bg-danger">delete</a>
+                <a href="<?= base_url('userposts/delete/') . $post['id']; ?>" onclick="return confirm('delete this user post?')" class="badge text-bg-danger">delete</a>
               </td>
             </tr>
           <?php } ?>

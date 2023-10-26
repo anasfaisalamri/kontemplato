@@ -28,11 +28,10 @@
     </form>
   </div>
 
-  <h5 class="my-4">Total Posts : <?= $total_rows; ?></h5>
-
   <div class="row">
     <div class="col-md-12">
       <?php if (!empty($allPosts)) { ?>
+        <h5 class="my-4">Total Posts : <?= $total_rows; ?></h5>
         <table class="table table-hover table-striped mb-5">
           <thead>
             <tr>
@@ -40,6 +39,7 @@
               <th scope="col">Category</th>
               <th scope="col">Writer</th>
               <th scope="col">Title</th>
+              <th scope="col">is active</th>
               <th scope="col">Created at</th>
               <th scope="col">Updated at</th>
               <th scope="col">Action</th>
@@ -53,6 +53,7 @@
                 <td><?= $item['category']; ?></td>
                 <td><?= $item['writer']; ?></td>
                 <td><?= $item['title']; ?></td>
+                <td><?= $item['is_active']; ?></td>
                 <td><?= date('d F Y', strtotime($item['created_at'])); ?></td>
                 <td><?= date('d F Y', strtotime($item['updated_at'])); ?></td>
                 <td>
@@ -63,6 +64,9 @@
             <?php } ?>
           </tbody>
         </table>
+      <?php } else { ?>
+        <p class="mt-4">Hasil untuk "<span class="text-primary"><?= $keyword; ?></span>" tidak ditemukan.</p>
+        <small class="text-gray-500">tekan tombol <em>cari/search</em> untuk melihat semua tulisan.</small>
       <?php } ?>
     </div>
   </div>

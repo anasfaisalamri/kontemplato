@@ -27,9 +27,9 @@
 
   <?php foreach ($menu as $m) { ?>
     <!-- Heading -->
-    <div class="sidebar-heading <?= strtolower($m['menu']); ?>">
+    <!-- <div class="sidebar-heading <?= strtolower($m['menu']); ?>">
       <?= $m['menu']; ?>
-    </div>
+    </div> -->
 
     <?php
     $menuId = $m['id'];
@@ -56,7 +56,7 @@
       <?php } ?>
 
       <!-- Divider -->
-      <hr class="sidebar-divider mt-3 <?= strtolower($m['menu']); ?>">
+      <!-- <hr class="sidebar-divider mt-3 <?= strtolower($m['menu']); ?>"> -->
     <?php } ?>
 
     <li class="nav-item">

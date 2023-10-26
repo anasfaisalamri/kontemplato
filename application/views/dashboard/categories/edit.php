@@ -11,11 +11,15 @@
         <input type="hidden" name="id" value="<?= $category['id']; ?>">
         <div class="form-group">
           <label for="category">Category Name</label>
-          <input type="Text" class="form-control" id="category" name="category" value="<?= $category['category']; ?>" autofocus>
+          <input type="Text" class="form-control mb-3" id="category" name="category" value="<?= $category['category']; ?>" autofocus>
           <?= form_error('category', '<small class="text-danger">', '</small>'); ?>
+
+          <label for="category">Category Description</label>
+          <input type="Text" class="form-control" id="desc" name="desc" value="<?= $category['desc']; ?>" autofocus>
+          <?= form_error('desc', '<small class="text-danger">', '</small>'); ?>
         </div>
 
-        <button type="submit" class="btn btn-primary">Change Category Name</button>
+        <button type="submit" class="btn btn-primary">Change Category</button>
       </form>
     </div>
   </div>
