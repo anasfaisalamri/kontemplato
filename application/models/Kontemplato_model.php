@@ -34,30 +34,72 @@ class Kontemplato_model extends CI_Model
       $query = "SELECT `categories`.`id`, `categories`.`category`,
                       `writers`.`id`, `writers`.`writer`,
                       `illustrators`.`id`, `illustrators`.`illustrator`,
-                      `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`title`, `posts`.`slug`, `posts`.`created_at`, `posts`.`updated_at`
+                      `file_artwork`.`name_artwork`, `file_artwork`.`post_id`,
+                      `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`is_active`, `posts`.`title`, `posts`.`slug`, `posts`.`created_at`, `posts`.`updated_at`
               FROM `posts` JOIN `categories` ON `categories`.`id` = `posts`.`category_id` 
               JOIN `writers` ON `writers`.`id` = `posts`.`writer_id` 
               JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
+              JOIN `file_artwork` ON `file_artwork`.`post_id` = `posts`.`id`
               WHERE `posts`.`title` LIKE '%$keyword%'
                 OR `writers`.`writer` LIKE '%$keyword%'
                 OR `categories`.`category` LIKE '%$keyword%'
               ORDER BY `posts`.`created_at` DESC";
 
-      return $this->db->query($query)->result_array();
+      $result = $this->db->query($query)->result_array();
+
+      return $result;
     }
 
     $this->db->select('categories.id, categories.category, 
                       writers.id, writers.writer,
                       illustrators.id, illustrators.illustrator,
-                      posts.id, posts.category_id, posts.writer_id, posts.illustrator_id, posts.title, posts.slug,  posts.created_at, posts.updated_at');
+                      file_artwork.post_id, file_artwork.name_artwork,
+                      posts.id, posts.category_id, posts.writer_id, posts.illustrator_id, posts.is_active, posts.title, posts.slug,  posts.created_at, posts.updated_at');
     $this->db->from('posts');
     $this->db->join('categories', 'categories.id = posts.category_id');
     $this->db->join('writers', 'writers.id = posts.writer_id');
     $this->db->join('illustrators', 'illustrators.id = posts.illustrator_id');
+    $this->db->join('file_artwork', 'file_artwork.post_id = posts.id');
     $this->db->order_by('posts.created_at', 'DESC');
 
     $this->db->limit($limit)->offset($start);
     return $this->db->get()->result_array();
+  }
+
+  public function getPostByCategory($category, $keyword = null)
+  {
+    if ($keyword) {
+      $query = "SELECT `categories`.`id`, `categories`.`category`,
+                        `writers`.`id`, `writers`.`writer`,
+                        `illustrators`.`id`, `illustrators`.`illustrator`,
+                        `file_artwork`.`name_artwork`, `file_artwork`.`post_id`,
+                        `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`title`, `posts`.`slug`, `posts`.`created_at`, `posts`.`updated_at`
+                FROM `posts` JOIN `categories` ON `categories`.`id` = `posts`.`category_id` 
+                JOIN `writers` ON `writers`.`id` = `posts`.`writer_id` 
+                JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
+                JOIN `file_artwork` ON `file_artwork`.`post_id` = `posts`.`id`
+                WHERE `posts`.`category_id` = $category
+                AND `posts`.`title` LIKE '%$keyword%'
+                OR `writers`.`writer` LIKE '%$keyword%'
+                ORDER BY `posts`.`created_at` DESC";
+
+      return $this->db->query($query)->result_array();
+    }
+
+    $query = "SELECT `categories`.`id`, `categories`.`category`,
+                      `writers`.`id`, `writers`.`writer`,
+                      `illustrators`.`id`, `illustrators`.`illustrator`,
+                      `file_artwork`.`name_artwork`, `file_artwork`.`post_id`,
+                      `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`is_active`, `posts`.`title`, `posts`.`slug`, `posts`.`created_at`, `posts`.`updated_at`
+              FROM `posts` JOIN `categories` ON `categories`.`id` = `posts`.`category_id` 
+              JOIN `writers` ON `writers`.`id` = `posts`.`writer_id` 
+              JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
+              JOIN `file_artwork` ON `file_artwork`.`post_id` = `posts`.`id`
+              WHERE `posts`.`category_id` = $category
+              AND `posts`.`is_active` = 1
+              ORDER BY `posts`.`created_at` DESC";
+
+    return $this->db->query($query)->result_array();
   }
 
   public function getPostBySlug($slug)
@@ -66,7 +108,7 @@ class Kontemplato_model extends CI_Model
                       `writers`.`id`, `writers`.`writer`,
                       `illustrators`.`id`, `illustrators`.`illustrator`,
                       `file_artwork`.`name_artwork`, `file_artwork`.`post_id`,
-                      `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`title`, `posts`.`slug`, `posts`.`tagline`, `posts`.`body`, `posts`.`created_at`
+                      `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`is_active`, `posts`.`title`, `posts`.`slug`, `posts`.`theme`, `posts`.`tagline`, `posts`.`body`, `posts`.`created_at`
               FROM `posts` JOIN `categories` ON `categories`.`id` = `posts`.`category_id` 
               JOIN `writers` ON `writers`.`id` = `posts`.`writer_id` 
               JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
@@ -78,7 +120,7 @@ class Kontemplato_model extends CI_Model
 
   public function getKontemplatoHl()
   {
-    $query = "SELECT `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`volume_id`, `posts`.`is_highlight`, `posts`.`title`, `posts`.`slug`, `posts`.`tagline`, `posts`.`body`, `posts`.`created_at`, `posts`.`updated_at`,
+    $query = "SELECT `posts`.`id`, `posts`.`category_id`, `posts`.`writer_id`, `posts`.`illustrator_id`, `posts`.`volume_id`, `posts`.`is_highlight`, `posts`.`title`, `posts`.`slug`, `posts`.`tagline`, `posts`.`theme`, `posts`.`body`, `posts`.`created_at`, `posts`.`updated_at`,
                     `writers`.`id`, `writers`.`writer`,
                     `categories`.`id`, `categories`.`category`,
                     `illustrators`.`id`, `illustrators`.`illustrator`,
@@ -95,7 +137,7 @@ class Kontemplato_model extends CI_Model
                 AND `posts`.`is_highlight` = 1
               ORDER BY `posts`.`created_at` DESC LIMIT 1";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->row_array();
   }
 
   public function getEssayHl()
@@ -112,7 +154,7 @@ class Kontemplato_model extends CI_Model
               WHERE `categories`.`category` = 'ornamen'
               ORDER BY `posts`.`created_at` DESC LIMIT 1";
 
-    return $this->db->query($query)->result_array();
+    return $this->db->query($query)->row_array();
   }
 
   public function getAllKontemplato()
@@ -179,7 +221,8 @@ class Kontemplato_model extends CI_Model
               JOIN `file_artwork` ON `posts`.`id` = `file_artwork`.`post_id`
               JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
               JOIN `volumes` ON `posts`.`volume_id` = `volumes`.`id`
-              WHERE `posts`.`slug` = '$slug'";
+              WHERE `posts`.`slug` = '$slug'
+              AND `posts`.`is_active` = 1";
 
     return $this->db->query($query)->row_array();
   }
@@ -196,7 +239,8 @@ class Kontemplato_model extends CI_Model
               JOIN `writers` ON `writers`.`id` = `posts`.`writer_id` 
               JOIN `file_artwork` ON `file_artwork`.`post_id` = `posts`.`id`
               JOIN `illustrators` ON `illustrators`.`id` = `posts`.`illustrator_id`
-              WHERE `posts`.`slug` = '$slug'";
+              WHERE `posts`.`slug` = '$slug'
+              AND `posts`.`is_active` = 1";
 
     return $this->db->query($query)->row_array();
   }
