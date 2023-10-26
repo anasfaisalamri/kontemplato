@@ -24,7 +24,7 @@
   <div class="row mt-5">
     <?php if (empty($posts)) { ?>
       <div class="row justify-content-center text-center mb-5">
-        <div class="col-5 mb-5">
+        <div class="col-10 mb-5 col-sm-6">
           <h5>Konten yang Kamu cari gak ketemu! </h5>
           <h5 class="mt-3">Coba ganti keyword dengan benar berdasarkan <strong>Nama Penulis</strong>, <strong>Judul</strong> dari tulisan atau <strong>Kategori</strong> tulisan.</h5>
           <small class="text-gray-500 mt-5">tekan tombol <em>cari/search</em> untuk melihat semua tulisan.</small>
