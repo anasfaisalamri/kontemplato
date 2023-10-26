@@ -2,20 +2,22 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-5 col-lg-4">
-        <div class="essay-highlight d-none d-sm-block">
+        <div class="essay-highlight d-none d-md-block">
           <?php if (!empty($essay_hl)) { ?>
-            <?php foreach ($essay_hl as $hl) { ?>
-              <div class="item">
-                <img src="<?= base_url('assets/'); ?>img/artwork/<?= $hl['name_artwork']; ?>" alt="<?= $hl['name_artwork']; ?>" class="img-fluid">
-                <div class="redaksi">
-                  <h2 class="judul"><?= $hl['title']; ?></h2>
-                  <h5 class="penulis">oleh <b><?= $hl['writer']; ?></b></h5>
-                  <p class="tagline"><?= $hl['tagline']; ?></p>
-                  <p class="date"><?= date('d/m/Y', strtotime($hl['created_at'])); ?></p>
-                  <a href="<?= base_url('home/show/') . $hl['slug']; ?>" class="btn btn-primary">Lanjut Baca</a>
-                </div>
+            <div class="item">
+              <img src="<?= base_url('assets/'); ?>img/artwork/<?= $essay_hl['name_artwork']; ?>" alt="<?= $essay_hl['name_artwork']; ?>" class="img-fluid">
+              <div class="redaksi">
+                <h2 class="judul"><?= $essay_hl['title']; ?></h2>
+                <h5 class="penulis">oleh <b><?= $essay_hl['writer']; ?></b></h5>
+                <?php if ($essay_hl['tagline']) { ?>
+                  <p class="tagline fst-italic">"<?= $essay_hl['tagline']; ?>"</p>
+                <?php } else { ?>
+                  <p class="tagline"><?= $essay_hl['tagline']; ?></p>
+                <?php } ?>
+                <p class="date"><?= date('d/m/Y', strtotime($essay_hl['created_at'])); ?></p>
+                <a href="<?= base_url('home/show/') . $essay_hl['slug']; ?>" class="btn btn-primary">Lanjut Baca</a>
               </div>
-            <?php } ?>
+            </div>
           <?php } else { ?>
             <div class="item">
               <img src="<?= base_url('assets/') ?>img/icon/logo.png" class="img-fluid">
@@ -34,7 +36,7 @@
                 <div class="item">
                   <div class="highlight">
                     <div class="text-center">
-                      <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="badge"><?= $item['category'] ?></a>
+                      <a href="<?= base_url('home/posts?category=' . strtolower($item['category'])); ?>" class="badge"><?= $item['category'] ?></a>
                       <p class="date"><?= date('d/m/Y', strtotime($item['created_at'])); ?></p>
                     </div>
                     <a href="<?= base_url('home/show/') . $item['slug']; ?>" class="img-overflow">
@@ -46,7 +48,11 @@
                       </a>
                     </h4>
                     <div class="d-block d-md-none">
-                      <p class="tagline"><?= $item['tagline']; ?></p>
+                      <?php if ($item['tagline']) { ?>
+                        <p class="tagline fst-italic">"<?= $item['tagline']; ?>"</p>
+                      <?php } else { ?>
+                        <p class="tagline"><?= $item['tagline']; ?></p>
+                      <?php } ?>
                     </div>
                     <h6 class="penulis text-uppercase"><?= $item['writer']; ?></h6>
                     <div class="d-block d-md-none">
@@ -55,11 +61,15 @@
                   </div>
                   <div class="d-none d-lg-block overlay">
                     <div class="text-center overlay-item">
-                      <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="badge">
+                      <a href="<?= base_url('home/posts?category=' . strtolower($item['category'])); ?>" class="badge">
                         <?= $item['category']; ?>
                       </a>
                       <p class="date"><?= date('d/m/Y', strtotime($item['created_at'])); ?></p>
-                      <p class="tagline"><?= $item['tagline']; ?></p>
+                      <?php if ($item['tagline']) { ?>
+                        <p class="tagline fst-italic">"<?= $item['tagline']; ?>"</p>
+                      <?php } else { ?>
+                        <p class="tagline"><?= $item['tagline']; ?></p>
+                      <?php } ?>
                       <a href="<?= base_url('home/show/') . $item['slug']; ?>" class="btn btn-light fw-bold text-capitalize">lanjut baca</a>
                     </div>
                   </div>
@@ -80,9 +90,16 @@
               </div>
             <?php } ?>
             <div class="item more bg-main d-flex align-items-center justify-content-center">
-              <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="d-block btn btn-dark text-capitalize text-white">
-                kumpulan ornamen
-              </a>
+              <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori
+                </button>
+                <ul class="dropdown-menu">
+                  <?php foreach ($categories as $category) { ?>
+                    <li><a class="dropdown-item" href="<?= base_url('home/posts?category=') . $category['slug']; ?>"><?= $category['category']; ?></a></li>
+                  <?php } ?>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -93,7 +110,7 @@
               <div class="item">
                 <div class="highlight">
                   <div class="text-center">
-                    <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="badge"><?= $item['category'] ?></a>
+                    <a href="<?= base_url('home/posts?category=' . strtolower($item['category'])); ?>" class="badge"><?= $item['category'] ?></a>
                     <p class="date"><?= date('d/m/Y', strtotime($item['created_at'])); ?></p>
                   </div>
                   <a href="<?= base_url('home/show/') . $item['slug']; ?>" class="img-overflow">
@@ -105,7 +122,11 @@
                     </a>
                   </h4>
                   <div class="d-block d-md-none">
-                    <p class="tagline"><?= $item['tagline']; ?></p>
+                    <?php if ($item['tagline']) { ?>
+                      <p class="tagline fst-italic">"<?= $item['tagline']; ?>"</p>
+                    <?php } else { ?>
+                      <p class="tagline"><?= $item['tagline']; ?></p>
+                    <?php } ?>
                   </div>
                   <h6 class="penulis text-uppercase"><?= $item['writer']; ?></h6>
                   <div class="d-block d-md-none">
@@ -114,20 +135,31 @@
                 </div>
                 <div class="d-none d-lg-block overlay">
                   <div class="text-center overlay-item">
-                    <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="badge">
+                    <a href="<?= base_url('home/posts?category=' . strtolower($item['category'])); ?>" class="badge">
                       <?= $item['category']; ?>
                     </a>
                     <p class="date"><?= date('d/m/Y', strtotime($item['created_at'])); ?></p>
-                    <p class="tagline"><?= $item['tagline']; ?></p>
+                    <?php if ($item['tagline']) { ?>
+                      <p class="tagline fst-italic">"<?= $item['tagline']; ?>"</p>
+                    <?php } else { ?>
+                      <p class="tagline"><?= $item['tagline']; ?></p>
+                    <?php } ?>
                     <a href="<?= base_url('home/show/') . $item['slug']; ?>" class="btn btn-light fw-bold text-capitalize">lanjut baca</a>
                   </div>
                 </div>
               </div>
             <?php } ?>
             <div class="item more bg-main d-flex align-items-center justify-content-center">
-              <a href="<?= base_url('home/' . strtolower($item['category'])); ?>" class="d-block btn btn-dark text-capitalize text-white">
-                kumpulan ornamen
-              </a>
+              <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori
+                </button>
+                <ul class="dropdown-menu">
+                  <?php foreach ($categories as $category) { ?>
+                    <li><a class="dropdown-item" href="<?= base_url('home/posts?category=') . $category['slug']; ?>"><?= $category['category']; ?></a></li>
+                  <?php } ?>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
